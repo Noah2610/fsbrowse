@@ -2,24 +2,29 @@ import fetch from "unfetch";
 
 // TODO
 const ENDPOINT_URL = "http://0.0.0.0:8090";
+const SHOULD_MOCK = true;
 
 class Endpoint {
     path = path => {
-        // const url = `${ENDPOINT_URL}/${path}`;
-        // return url;
-        // TODO mock
-        return path;
+        if (SHOULD_MOCK) {
+            return path;
+        } else {
+            const url = `${ENDPOINT_URL}/${path}`;
+            return url;
+        }
     };
 
     // Returns a the body from of the request, as a string.
     get = path => {
-        // return fetch(this.path(path));
-        // TODO mock
-        const isFile = path.split("dot").length > 1;
-        if (isFile) {
-            return mock.file(path);
+        if (SHOULD_MOCK) {
+            const isFile = path.split("dot").length > 1;
+            if (isFile) {
+                return mock.file(path);
+            } else {
+                return mock.dir(path);
+            }
         } else {
-            return mock.dir(path);
+            return fetch(this.path(path));
         }
     };
 
