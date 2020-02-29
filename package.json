@@ -15,7 +15,8 @@
         "emotion-theming": "^10.0.27",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
-        "swr": "^0.1.18"
+        "swr": "^0.1.18",
+        "unfetch": "^4.1.0"
     },
     "devDependencies": {
         "next": "^9.2.2",
