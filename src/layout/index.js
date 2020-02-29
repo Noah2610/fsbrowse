@@ -7,6 +7,7 @@ const THEME = {
         bg: "#353535",
         primary: "#CCCCCC",
         secondary: "#F92672",
+        alert: "#FF0000",
     },
 };
 
@@ -14,10 +15,8 @@ const Layout = ({ children }) => (
     <>
         <Polyfills />
         <ThemeProvider theme={THEME}>
-            <Body>
-                <CSSReset />
-                {children}
-            </Body>
+            <CSSReset />
+            <Body>{children}</Body>
         </ThemeProvider>
     </>
 );

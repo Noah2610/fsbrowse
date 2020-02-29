@@ -1,17 +1,20 @@
-import { Box } from "@chakra-ui/core";
-import endpoint from "../endpoint";
+import Head from "next/head";
+import { Box, Text } from "@chakra-ui/core";
 
 const Home = () => {
-    const fetched = endpoint.json(".");
-    console.log(fetched.name);
-    console.log(fetched.path);
-
     return (
-        <div>
-            <Box>other</Box>
-            <pre>fetched: {JSON.stringify(fetched)}</pre>
-            Hello mesh!
-        </div>
+        <>
+            <Head>
+                <meta http-equiv="refresh" content="0; URL=/b" />
+            </Head>
+            <Box>
+                Redirect to{" "}
+                <Text display="inline" color="alert">
+                    <a href="/b">/b</a>
+                </Text>
+                !
+            </Box>
+        </>
     );
 };
 
