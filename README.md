@@ -1,6 +1,11 @@
-# Mesh
-Media/Video dashboard.  
-Presents directories and media files from an end-point  
+# `fsbrowse`
+__Working title...__  
+
+---
+
+## Description
+Files and directories browser.  
+Presents directories and files from an end-point  
 in a web interface.
 
 ## Development
