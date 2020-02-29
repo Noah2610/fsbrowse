@@ -11,12 +11,15 @@ const THEME = {
 };
 
 const Layout = ({ children }) => (
-    <ThemeProvider theme={THEME}>
-        <Body>
-            <CSSReset />
-            {children}
-        </Body>
-    </ThemeProvider>
+    <>
+        <Polyfills />
+        <ThemeProvider theme={THEME}>
+            <Body>
+                <CSSReset />
+                {children}
+            </Body>
+        </ThemeProvider>
+    </>
 );
 
 const Body = ({ children, ...props }) => (
@@ -30,6 +33,15 @@ const Body = ({ children, ...props }) => (
     >
         {children}
     </Box>
+);
+
+const Polyfills = () => (
+    <>
+        <script
+            src="https://unpkg.com/unfetch/polyfill"
+            type="text/javascript"
+        />
+    </>
 );
 
 export default Layout;
