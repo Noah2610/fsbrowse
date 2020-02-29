@@ -1,0 +1,50 @@
+{
+    "name": "mesh",
+    "author": "Noah Rosenzweig",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next --port 8080",
+        "start": "next start",
+        "build": "next build"
+    },
+    "dependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "react": "^16.13.0",
+        "react-dom": "^16.13.0",
+        "react-scripts": "3.4.0"
+    },
+    "devDependencies": {
+        "next": "^9.2.2",
+        "prettier": "^1.19.1"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": false,
+        "jsxSingleQuote": false,
+        "quoteProps": "consistent",
+        "trailingComma": "es5",
+        "jsxBracketSameLine": false,
+        "arrowParens": "avoid",
+        "endOfLine": "lf"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
