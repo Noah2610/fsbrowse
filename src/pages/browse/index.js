@@ -29,7 +29,7 @@ const BrowseRoot = () => {
         if (file.type === FILE_TYPE.DIR) {
             return (
                 <Stack isInline>
-                    <Box width="49vw" height="100vh">
+                    <Box width="49vw" height="100vh" overflowY="auto">
                         <Browser root={file} isFocused />
                     </Box>
                     <Divider orientation="vertical" width="2vw" />

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { Box, Text, Heading, Stack } from "@chakra-ui/core";
 import FILE_TYPE from "FILE-TYPE";
@@ -93,13 +93,15 @@ const Browser = ({ root, isFocused }) => {
                 {root.childrenPaths.map((childPath, i) => {
                     const isSelected = i === selectedIndex;
                     const isEvenIdx = i % 2 === 0;
-                    const selectedProps = isSelected
-                        ? {
-                              borderWidth: "1px",
-                              borderStyle: "solid",
-                              borderColor: "highlight",
-                          }
-                        : {};
+                    let selectedProps = {};
+                    if (isSelected) {
+                        selectedProps = {
+                            borderWidth: "1px",
+                            borderStyle: "solid",
+                            borderColor: "highlight",
+                            ref: node => node && node.scrollIntoView(),
+                        };
+                    }
                     return (
                         <Box position="relative" key={i}>
                             <Entry
