@@ -30,11 +30,11 @@ const BrowseRoot = () => {
             return (
                 <Stack isInline>
                     <Box width="49vw" height="100vh">
-                        <Browser {...file} />
+                        <Browser root={file} isFocused />
                     </Box>
                     <Divider orientation="vertical" width="2vw" />
                     <Box width="49vw" height="100vh">
-                        <Browser {...file} />
+                        <Browser root={file} />
                     </Box>
                 </Stack>
             );
