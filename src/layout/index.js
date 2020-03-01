@@ -8,6 +8,8 @@ const THEME = {
         bg: "#353535",
         primary: "#CCCCCC",
         secondary: "#F92672",
+        entryBgPrimary: "#252525",
+        entryBgSecondary: "#333333",
         error: "#DC322F",
         warn: "#E5C07B",
         code: "#587992",

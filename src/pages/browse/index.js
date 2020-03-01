@@ -9,8 +9,6 @@ const BrowseRoot = () => {
 
     const { data: file, error: fetchError } = useSWR(path, endpoint.json, {});
 
-    console.log(file);
-
     const error =
         fetchError || (file === undefined && new Error("No file data"));
 

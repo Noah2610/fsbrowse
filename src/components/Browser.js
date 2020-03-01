@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Box, Text, Heading, Stack } from "@chakra-ui/core";
 import FILE_TYPE from "FILE-TYPE";
+import File from "./File";
 
 const Browser = root => {
     if (root.type !== FILE_TYPE.DIR) {
@@ -16,7 +17,7 @@ const Browser = root => {
     const nameDisplay = root.name.replace(/\/?$/, "/");
 
     return (
-        <Box>
+        <Box padding={4}>
             <Heading
                 fontFamily="mono"
                 color="primary"
@@ -25,10 +26,24 @@ const Browser = root => {
                 {nameDisplay}
             </Heading>
 
-            <Stack>
-                {root.childrenPaths.map(childPath => (
-                    <Box color="code">{childPath}</Box>
-                ))}
+            <Stack spacing={0}>
+                {root.childrenPaths.map((childPath, i) => {
+                    const isEvenIdx = i % 2 === 0;
+                    return (
+                        <Box position="relative" key={i}>
+                            <File
+                                path={childPath}
+                                width="100%"
+                                height="100%"
+                                backgroundColor={
+                                    isEvenIdx
+                                        ? "entryBgPrimary"
+                                        : "entryBgSecondary"
+                                }
+                            />
+                        </Box>
+                    );
+                })}
             </Stack>
         </Box>
     );
