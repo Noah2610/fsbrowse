@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Box, Text, Heading, Stack } from "@chakra-ui/core";
 import FILE_TYPE from "FILE-TYPE";
-import File from "./File";
+import Entry from "./Entry";
 
 const Browser = root => {
     if (root.type !== FILE_TYPE.DIR) {
@@ -31,7 +31,7 @@ const Browser = root => {
                     const isEvenIdx = i % 2 === 0;
                     return (
                         <Box position="relative" key={i}>
-                            <File
+                            <Entry
                                 path={childPath}
                                 width="100%"
                                 height="100%"
