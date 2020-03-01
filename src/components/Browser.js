@@ -12,7 +12,7 @@ const KEYS = {
 const keyCodesFor = chars => chars.map(c => c.toUpperCase().charCodeAt(0));
 const BINDING_NAMES = {
     UP: "up",
-    DOWN: "up",
+    DOWN: "down",
 };
 const BINDINGS = [
     {
@@ -64,11 +64,17 @@ const Browser = ({ root, isFocused }) => {
         }
 
         if (selectionMod) {
-            setSelectedIndex(
-                prevIndex => (prevIndex + selectionMod) % childrenCount
-            );
+            setSelectedIndex(prevIndex => {
+                const newIndex = Math.max(
+                    Math.min(prevIndex + selectionMod, childrenCount - 1),
+                    0
+                );
+                return newIndex;
+            });
         }
     };
+
+    console.log(selectedIndex);
 
     return (
         <Box
