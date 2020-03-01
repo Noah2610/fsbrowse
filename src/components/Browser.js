@@ -74,8 +74,6 @@ const Browser = ({ root, isFocused }) => {
         }
     };
 
-    console.log(selectedIndex);
-
     return (
         <Box
             padding={4}
