@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Box, Text, Stack, Divider } from "@chakra-ui/core";
+import { Box, Text, Heading, Stack } from "@chakra-ui/core";
 import FILE_TYPE from "FILE-TYPE";
 
 const Browser = root => {
@@ -13,7 +13,25 @@ const Browser = root => {
         );
     }
 
-    return <div>BROWSER</div>;
+    const nameDisplay = root.name.replace(/\/?$/, "/");
+
+    return (
+        <Box>
+            <Heading
+                fontFamily="mono"
+                color="primary"
+                textDecoration="underline"
+            >
+                {nameDisplay}
+            </Heading>
+
+            <Stack>
+                {root.childrenPaths.map(childPath => (
+                    <Box color="code">{childPath}</Box>
+                ))}
+            </Stack>
+        </Box>
+    );
 };
 
 Browser.propTypes = {

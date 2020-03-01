@@ -5,7 +5,7 @@ import FILE_TYPE from "FILE-TYPE";
 import Browser from "../../components/Browser";
 
 const BrowseRoot = () => {
-    const path = "."; // TODO
+    const path = "lmao"; // TODO
 
     const { data: file, error: fetchError } = useSWR(path, endpoint.json, {});
 
