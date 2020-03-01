@@ -2,12 +2,15 @@ import { ThemeProvider, Box, theme, CSSReset } from "@chakra-ui/core";
 
 const THEME = {
     ...theme,
+
     colors: {
         ...theme.colors,
         bg: "#353535",
         primary: "#CCCCCC",
         secondary: "#F92672",
-        alert: "#FF0000",
+        error: "#DC322F",
+        warn: "#E5C07B",
+        code: "#587992",
     },
 };
 

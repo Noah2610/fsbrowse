@@ -6,6 +6,11 @@ module.exports = {
             __dirname,
             "src/endpoint"
         );
+        config.resolve.alias["FILE-TYPE$"] = path.join(
+            __dirname,
+            "src/file-type"
+        );
+        config.resolve.alias["MOCK$"] = path.join(__dirname, "src/mock");
 
         return config;
     },

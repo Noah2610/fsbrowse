@@ -1,11 +1,8 @@
+import FILE_TYPE from "FILE-TYPE";
+
 // TODO: Unnecessary?
 export const ENDPOINT_URL = "http://0.0.0.0:8090";
 export const SHOULD_MOCK = true;
-
-export const FILE_TYPE = {
-    FILE: "f",
-    DIR: "d",
-};
 
 export const mockFile = filepath => {
     const filename = filepath.split("/").pop();
@@ -24,11 +21,11 @@ export const mockDir = dirpath => {
         name: dirname,
         path: dirpath,
         type: FILE_TYPE.DIR,
-        children: [
-            `${dirname}-dir`,
-            `${dirname}-file.txt`,
-            `${dirname}.foo`,
-            `${dirname}.bar`,
+        childrenPaths: [
+            `${dirpath}${dirname}-dir`,
+            `${dirpath}${dirname}-file.txt`,
+            `${dirpath}${dirname}.foo`,
+            `${dirpath}${dirname}.bar`,
         ],
     });
 };
@@ -48,7 +45,6 @@ export const path = path => {
 export default {
     SHOULD_MOCK,
     ENDPOINT_URL,
-    FILE_TYPE,
     path,
     mockFile,
     mockDir,
