@@ -40,13 +40,6 @@ const Body = ({ children, ...props }) => (
     </Box>
 );
 
-const Polyfills = () => (
-    <>
-        <script
-            src="https://unpkg.com/unfetch/polyfill"
-            type="text/javascript"
-        />
-    </>
-);
+const Polyfills = () => <></>;
 
 export default Layout;

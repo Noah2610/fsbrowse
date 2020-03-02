@@ -5,9 +5,13 @@ import FILE_TYPE from "FILE-TYPE";
 import Browser from "../../components/Browser";
 
 const BrowseRoot = () => {
-    const path = "lmao"; // TODO
+    const endpointUrl = "http://localhost:8090/"; // TODO
 
-    const { data: file, error: fetchError } = useSWR(path, endpoint.json, {});
+    const { data: file, error: fetchError } = useSWR(
+        endpointUrl,
+        endpoint.json,
+        {}
+    );
 
     const error =
         fetchError || (file === undefined && new Error("No file data"));
@@ -46,6 +50,8 @@ const BrowseRoot = () => {
                     </Text>
                 </Box>
             );
+        } else {
+            return null;
         }
     }
 };

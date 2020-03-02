@@ -1,9 +1,9 @@
-import fetch from "unfetch";
+import fetch from "isomorphic-unfetch";
 import mock from "./mock";
 
 class Endpoint {
     // Returns a the body from of the request, as a string.
-    get = url => {
+    get = async url => {
         if (mock.SHOULD_MOCK) {
             const isFile = url.split("dot").length > 1;
             if (isFile) {
@@ -12,12 +12,12 @@ class Endpoint {
                 return mock.mockDir(url);
             }
         } else {
-            return fetch(this.url(url));
+            return await fetch(url);
         }
     };
 
     // Returns the request's parsed body as JSON.
-    json = url => JSON.parse(this.get(url));
+    json = async url => (await this.get(url)).json();
 }
 
 const endpoint = new Endpoint();

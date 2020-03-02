@@ -13,11 +13,11 @@
         "@emotion/core": "^10.0.28",
         "@emotion/styled": "^10.0.27",
         "emotion-theming": "^10.0.27",
+        "isomorphic-unfetch": "^3.0.0",
         "prop-types": "^15.7.2",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
-        "swr": "^0.1.18",
-        "unfetch": "^4.1.0"
+        "swr": "^0.1.18"
     },
     "devDependencies": {
         "next": "^9.2.2",
