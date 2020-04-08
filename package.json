@@ -20,7 +20,7 @@
         "swr": "^0.1.18"
     },
     "devDependencies": {
-        "next": "^9.2.2",
+        "next": "^9.3.2",
         "prettier": "^1.19.1"
     },
     "eslintConfig": {
